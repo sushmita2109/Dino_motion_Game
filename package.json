@@ -1,7 +1,7 @@
 {
-  "name": "t-rex",
+  "name": "dino-3dgame",
   "version": "1.0.0",
-  "author": "Ross Ning <rossning92@gmail.com>",
+  "author": "Samson Sanyaolu <hello@sosamson.com",
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
