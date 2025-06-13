@@ -1,7 +1,7 @@
 ### Don't forget to star this repository✨✨.
 # Motion added to the dino by raising the hand 
 
-[![Watch the video](https://www.loom.com/share/7ca74c6e5bdf41b6a53a777f58eb56a9?sid=f725a925-3af1-4482-bef7-1fa372f88450)
+[[Watch the video](https://www.loom.com/share/7ca74c6e5bdf41b6a53a777f58eb56a9?sid=f725a925-3af1-4482-bef7-1fa372f88450)
 # Dino 3D Game
 
 A Chrome Dino game remake using javascript and threejs.
