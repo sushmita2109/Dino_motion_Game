@@ -12,6 +12,8 @@
   },
   "dependencies": {
     "@fontsource/press-start-2p": "^4.4.0",
+    "@mediapipe/camera_utils": "^0.3.1675466862",
+    "@mediapipe/pose": "^0.5.1675469404",
     "css-loader": "^5.2.4",
     "file-loader": "^6.2.0",
     "style-loader": "^2.0.0",

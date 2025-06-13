@@ -1,6 +1,7 @@
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import "@fontsource/press-start-2p";
+import { initialPoseDetection } from "./MotionController";
 
 require("./main.css");
 
@@ -222,21 +223,43 @@ function enableShadow(renderer, light) {
 }
 enableShadow(renderer, directionalLight);
 
-function handleInput() {
-  const callback = () => {
-    if (isGameOver) {
-      restartGame();
-      return;
-    }
+// function handleInput() {
+//   const callback = () => {
+//     if (isGameOver) {
+//       restartGame();
+//       return;
+//     }
 
+//     jump = true;
+//   };
+
+//   document.addEventListener("keydown", callback, false);
+//   renderer.domElement.addEventListener("touchstart", callback);
+//   renderer.domElement.addEventListener("click", callback);
+// }
+// handleInput();
+
+function onPoseDetected(poseLandmarks) {
+  console.log("Pose detected", poseLandmarks);
+  if (isGameOver) {
+    restartGame();
+    return;
+  }
+
+  // Example condition: wrist y-position is higher than head y-position
+  const leftWristY = poseLandmarks[15].y;
+  const noseY = poseLandmarks[0].y;
+
+  if (leftWristY < noseY) {
+    console.log("Jump detected");
     jump = true;
-  };
-
-  document.addEventListener("keydown", callback, false);
-  renderer.domElement.addEventListener("touchstart", callback);
-  renderer.domElement.addEventListener("click", callback);
+  }
 }
-handleInput();
+
+// initPoseDetection(() => {
+//   dino.jump(); // Trigger jump when motion is detected
+// });
+initialPoseDetection(onPoseDetected);
 
 function handleWindowResize() {
   window.addEventListener(
